@@ -1720,17 +1720,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7122194791557495186, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 68c7cecfbc9052a40bcf7b43914cd9ce, type: 3}
+    - target: {fileID: 7122194791557495186, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122194791557495186, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122194791557495186, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8053275620645664267, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
       propertyPath: m_Name
       value: TempDice
       objectReference: {fileID: 0}
     - target: {fileID: 8891099919733090370, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3574675
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891099919733090370, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35174567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891099919733090370, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.05
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 8891099919733090370, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.05
+      value: -4.07
       objectReference: {fileID: 0}
     - target: {fileID: 8891099919733090370, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1765,7 +1789,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2121006986235534196, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aba9f105f065924cb53b969fc205377, type: 3}
