@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using ZeusUnite.Dice;
+using System;
 
 public class DiceDemo : MonoBehaviour
 {
@@ -41,13 +42,13 @@ public class DiceDemo : MonoBehaviour
 
     void Start()
     {
-        amountDicePlusButton.onClick.AddListener(IncreaseDices);
+        /*amountDicePlusButton.onClick.AddListener(IncreaseDices);
         amountDiceMinusButton.onClick.AddListener(DecreaseDices);
         rangeDicePlusButton.onClick.AddListener(IncreaseDicesRange);
         rangeDiceMinusButton.onClick.AddListener(DecreaseDicesRange);
 
         amountDiceField.text = diceAmount.ToString();
-        rangeDiceField.text = diceRange.ToString();
+        rangeDiceField.text = diceRange.ToString();*/
     }
 
     #region Public Methods
@@ -62,7 +63,7 @@ public class DiceDemo : MonoBehaviour
             return;
         }
 
-        int calculatedValue = 0;
+        /*int calculatedValue = 0;
         string rolledDices = "Dices:\n";
 
         for (int i = 0; i < diceAmount; i++)
@@ -159,6 +160,12 @@ public class DiceDemo : MonoBehaviour
             diceRange = 2;
 
         rangeDiceField.text = diceRange.ToString();
-    }
+    }*/
     #endregion
+}
+
+    private void UpdateLatestResults(DiceRoller dr)
+    {
+        throw new NotImplementedException();
+    }
 }
