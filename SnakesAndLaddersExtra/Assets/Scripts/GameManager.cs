@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -45,13 +46,29 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Else remove it. If the game is over, then we don't need it to be initialsed. 
+            // Else remove it. If the game is over, then we don't need it to be initialsed
             Destroy(gameObject);
         }
         
-        // Allows the dice to be clicked when the game is running.
+        // Allows the dice to be clicked when the game is running
         canClick = true;
-        // This is only true when the game is not finished.
+        // This is only true when the game is not finished
         hasGameFinished = false;
+    }
+
+    private void Update()
+    {
+        // If the game has finished, then the dice won't do anything. Won't animate or return values
+        if (hasGameFinished || !canClick ) return;
+
+        // If the right mouse click is used while the game is running, dice will animate and return a value.
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Reads the postion of the mouse relative to the game display
+            UnityEngine.Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            // Creates a new vector based on the 2D postion of the mouse
+            UnityEngine.Vector2 mousePosition2D = new UnityEngine.Vector2(mousePosition.x, mousePosition.y);
+        }
     }
 }
