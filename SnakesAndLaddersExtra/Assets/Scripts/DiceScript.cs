@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class DiceScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Initialise an integer, as we will be using its value for player movement on the game board//
+    int DiceRollValue;
 
-    // Update is called once per frame
-    void Update()
+    // SerializeField is used so Unity can view and edit non public assets//
+    [SerializeField]
+
+    // List the six dice sprites 
+    List<Sprite> die;
+
+    // Create a function that simulates the dice "rolling" in 2D.
+    public void DiceRollImage()
     {
-        
+        // Use Unity's SpriteRender built in function to go through each dice face
     }
 }
