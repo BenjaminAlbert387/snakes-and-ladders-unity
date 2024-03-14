@@ -58,10 +58,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // If the game has finished, then the dice won't do anything. Won't animate or return values
+        // If the game has finished, then the dice won't do anything. (Won't animate or return values)
         if (hasGameFinished || !canClick ) return;
 
-        // If the right mouse click is used while the game is running, dice will animate and return a value.
+        // If the right mouse click is used while the game is running, the code below will run.
         if (Input.GetMouseButtonDown(0))
         {
             // Reads the postion of the mouse relative to the game display
@@ -69,6 +69,18 @@ public class GameManager : MonoBehaviour
 
             // Creates a new vector based on the 2D postion of the mouse
             UnityEngine.Vector2 mousePosition2D = new UnityEngine.Vector2(mousePosition.x, mousePosition.y);
+
+            // Detects whether the mouse is directly on the dice or not, comparing it to coordinates 0,0
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition2D, UnityEngine.Vector2.zero);
+
+            // If the mouse IS NOT on the dice when right clicked, then nothing happens
+            if (!hit.collider) return;
+
+            // If the mouse IS on the dice when right clicked, then it will animate and return values
+            if (hit.collider.CompareTag("Dice"))
+            {
+
+            }
         }
     }
 }
