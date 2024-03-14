@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     // Creates an instance of GameManager. Instance is a "copy" of something
     public static GameManager instance;
 
+    // Create an integer that will be used to store the value of the dice roll
+    public int DiceRoll;
+
     //Loads the game when the application is opened 
     public void RestartGame()
     {
@@ -79,7 +82,16 @@ public class GameManager : MonoBehaviour
             // If the mouse IS on the dice when right clicked, then it will animate and return values
             if (hit.collider.CompareTag("Dice"))
             {
+                // Overwrite the DiceRoll integer
+                // Add 1 as (0, 6) means values 1 to 5 would be generated, and dices go to 6
+                DiceRoll = 1 + Random.Range(0, 6);
 
+                // Output the dice face based on the value generated
+                // Uses the DiceRollPLayAnimation fuction from the DiceScript.cs file for this
+                hit.collider.gameObject.GetComponent<DiceScript>().DiceRollPlayAnimation(DiceRoll);
+
+                // Stops the user from clicking the dice multiple times
+                canClick = false; 
             }
         }
     }
