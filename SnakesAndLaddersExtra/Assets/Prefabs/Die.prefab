@@ -144,6 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d4e5f0e06ce664e922e1937e8740ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  die:
+  - {fileID: 39516445742236537, guid: e492a1a02fc7a1b4c9beda24b93b77f9, type: 3}
+  - {fileID: 2376305099863235458, guid: e492a1a02fc7a1b4c9beda24b93b77f9, type: 3}
+  - {fileID: 1813239885723335896, guid: e492a1a02fc7a1b4c9beda24b93b77f9, type: 3}
+  - {fileID: -7464760887336577109, guid: e492a1a02fc7a1b4c9beda24b93b77f9, type: 3}
+  - {fileID: -8866378825118310145, guid: e492a1a02fc7a1b4c9beda24b93b77f9, type: 3}
+  - {fileID: -3287765887320952711, guid: e492a1a02fc7a1b4c9beda24b93b77f9, type: 3}
 --- !u!95 &9003251435171606009
 Animator:
   serializedVersion: 5
