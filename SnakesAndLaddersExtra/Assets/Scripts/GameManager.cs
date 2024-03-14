@@ -38,9 +38,12 @@ public class GameManager : MonoBehaviour
         // Else continue playing
     }
 
-    // Initalises the dice when the game starts
+    // Initalises the dice and resolution when the game starts
     private void Awake()
     {
+        // Sets game resolution
+        Screen.SetResolution(1366, 768, true);
+
         // If the game manager is equal to nothing
         if (instance == null)
         {
