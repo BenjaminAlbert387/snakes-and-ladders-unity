@@ -9,6 +9,7 @@ public class PieceScript : MonoBehaviour
 
     // List the colours used for the player counters
     List<Color> colors;
+
     void Start()
     {
         
@@ -21,7 +22,7 @@ public class PieceScript : MonoBehaviour
     }
 
     // Create a function that sets the colour of the player counters
-    public void SetsCounterColour(Player player)
+    public void SetColors(Player player)
     {
         // Uses Unity's built in function to get the counter sprite
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();

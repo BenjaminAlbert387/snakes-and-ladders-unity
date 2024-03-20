@@ -8,5 +8,5 @@ public enum Player { RED,BLUE }
 // Creates a public class called BoardScript
 public class BoardScript
 {
-    
+  
 }

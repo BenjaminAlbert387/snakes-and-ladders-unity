@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
         hasGameFinished = false;
 
         // For loop that creates as many player counters as players
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
             // Creates the player counter, stored in variable temp (Instantiates it)
             GameObject temp = Instantiate(gamePiece);
@@ -85,7 +86,15 @@ public class GameManager : MonoBehaviour
             temp.transform.position = startingPosition;
 
             // Player counter colour is set
-            temp.GetComponent<PieceScript>().SetsCounterColour((Player)i);
+            try
+            {
+                temp.GetComponent<PieceScript>().SetColors((Player)i);
+            }
+            catch (NullReferenceException)
+            {
+                UnityEngine.Debug.Log("Player counter not set");
+            }
+            
         }
     }
 
@@ -114,7 +123,7 @@ public class GameManager : MonoBehaviour
             {
                 // Overwrite the DiceRoll integer
                 // Add 1 as (0, 6) means values 1 to 5 would be generated, and dices go to 6
-                DiceRoll = 1 + Random.Range(0, 6);
+                DiceRoll = 1 + UnityEngine.Random.Range(0, 6);
 
                 // Output the dice face based on the value generated
                 // Uses the DiceRollPLayAnimation fuction from the DiceScript.cs file for this
