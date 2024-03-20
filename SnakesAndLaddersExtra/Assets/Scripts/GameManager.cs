@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         hasGameFinished = false;
 
         // For loop that creates as many player counters as players
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 2; i++)
         {
             // Creates the player counter, stored in variable temp (Instantiates it)
             GameObject temp = Instantiate(gamePiece);
@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
             {
                 UnityEngine.Debug.Log("Player counter not set");
             }
-            
         }
     }
 
