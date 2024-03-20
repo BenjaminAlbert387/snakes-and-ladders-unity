@@ -19,6 +19,17 @@ public class GameManager : MonoBehaviour
     // Create an integer that will be used to store the value of the dice roll
     public int DiceRoll;
 
+    // SerializeField is used, so Unity can view and edit non public assets
+    [SerializeField]
+
+    // Gets the object GamePiece. Used to create player counter
+    GameObject gamePiece;
+
+    [SerializeField]
+
+    // Initalise the starting position. Used for starting the game
+    UnityEngine.Vector3 startingPosition;
+
     //Loads the game when the application is opened 
     public void RestartGame()
     {
@@ -40,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Sets game resolution
+        // Sets game resolution. Tested on university desktop and works.
         Screen.SetResolution(1366, 768, true);
     }
 
@@ -63,6 +74,19 @@ public class GameManager : MonoBehaviour
         canClick = true;
         // This is only true when the game is not finished
         hasGameFinished = false;
+
+        // For loop that creates as many player counters as players
+        for (int i = 0; i < 2; i++)
+        {
+            // Creates the player counter, stored in variable temp (Instantiates it)
+            GameObject temp = Instantiate(gamePiece);
+
+            // Player counter is then moved to the beginning of the grid board
+            temp.transform.position = startingPosition;
+
+            // Player counter colour is set
+            temp.GetComponent<PieceScript>().SetsCounterColour((Player)i);
+        }
     }
 
     private void Update()
