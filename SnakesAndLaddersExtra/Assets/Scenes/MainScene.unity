@@ -308,7 +308,7 @@ MonoBehaviour:
   canClick: 0
   DiceRoll: 0
   gamePiece: {fileID: 6946725768579062016, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
-  startingPosition: {x: -4, y: -3, z: -1}
+  startingPosition: {x: -4, y: -3, z: 0}
   playingBoard: {fileID: 0}
   position: []
 --- !u!1 &619394800
@@ -1707,6 +1707,67 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1762031162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946725768579062016, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_Name
+      value: PlayerPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946725768579062016, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
+      propertyPath: m_TagString
+      value: Counter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
 --- !u!1 &1826902449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,3 +2359,4 @@ SceneRoots:
   - {fileID: 1895688924}
   - {fileID: 4179999632742917289}
   - {fileID: 2057263124}
+  - {fileID: 1762031162}
