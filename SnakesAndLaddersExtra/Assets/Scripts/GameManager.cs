@@ -31,6 +31,28 @@ public class GameManager : MonoBehaviour
     // Initalise the starting position. Used for starting the game
     UnityEngine.Vector3 startingPosition;
 
+    // Creates the playing board using BoardScript class
+    public BoardScript playingBoard;
+
+    // Lists each player. 2 Players for now
+    List<Player>players;
+
+    // Creates an integer. Used for current player movement
+    int currentPlayer;
+
+    // Creates an array of vector positions
+    public UnityEngine.Vector3[]position;
+
+    /* Creates a dictonary. Used for snakes, ladders
+    SuperSnake and bonus spaces. First int is the space
+    the player is currently on, the second int is the
+    space they will end on*/
+    Dictionary<int, int> joints;
+
+    /*Creates another dictonary. Used to connect each player
+    with their respective counter*/
+    Dictionary<Player, GameObject> pieces;
+
     //Loads the game when the application is opened 
     public void RestartGame()
     {
@@ -75,17 +97,42 @@ public class GameManager : MonoBehaviour
         canClick = true;
         // This is only true when the game is not finished
         hasGameFinished = false;
+        // Sets the variable of current players to 0
+        currentPlayer = 0;
+
+        // Creates a new board using the BoardScript method
+        playingBoard = new BoardScript();
+
+        // Creates a new list of players
+        players = new List<Player>();
+
+        /* Creates a new set of player counters 
+        that get linked to players */ 
 
         // For loop that creates as many player counters as players
         for (int i = 0; i < 2; i++)
         {
+            // Add a new player
+            players.Add((Player)i);
+
             // Creates the player counter, stored in variable temp (Instantiates it)
             GameObject temp = Instantiate(gamePiece);
+
+            //Stores a newly created counter into the temp variable
+            try 
+            {
+                pieces[(Player)i] = temp;
+            }
+
+            catch (NullReferenceException)
+            {
+                UnityEngine.Debug.Log("Counter not stored successfully");
+            }
 
             // Player counter is then moved to the beginning of the grid board
             temp.transform.position = startingPosition;
 
-            // Player counter colour is set
+            // Player counter colour is set. Try catch for errors.
             try
             {
                 temp.GetComponent<PieceScript>().SetColors((Player)i);

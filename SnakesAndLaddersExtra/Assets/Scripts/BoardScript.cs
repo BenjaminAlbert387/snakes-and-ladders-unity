@@ -6,7 +6,7 @@ using UnityEngine;
 public enum Player { RED,BLUE }
 
 // Creates a public class called BoardScript
-public class BoardScript
+public class BoardScript: MonoBehaviour
 {
   public void Board()
   {
