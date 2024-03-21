@@ -95,10 +95,18 @@ public class GameManager : MonoBehaviour
         
         // Allows the dice to be clicked when the game is running
         canClick = true;
+
         // This is only true when the game is not finished
         hasGameFinished = false;
+
         // Sets the variable of current players to 0
         currentPlayer = 0;
+
+        // Calls the method that sets up the positions
+        SetUpPositions();
+        
+        // Calls the method that sets up snakes, ladders etc
+        SetUpSnakesLaddersBonus();
 
         // Creates a new board using the BoardScript method
         playingBoard = new BoardScript();
@@ -108,6 +116,7 @@ public class GameManager : MonoBehaviour
 
         /* Creates a new set of player counters 
         that get linked to players */ 
+        pieces = new Dictionary<Player, GameObject>();
 
         // For loop that creates as many player counters as players
         for (int i = 0; i < 2; i++)
@@ -132,7 +141,7 @@ public class GameManager : MonoBehaviour
             // Player counter is then moved to the beginning of the grid board
             temp.transform.position = startingPosition;
 
-            // Player counter colour is set. Try catch for errors.
+            // Player counter colour is set. Try catch for errors
             try
             {
                 temp.GetComponent<PieceScript>().SetColors((Player)i);
@@ -142,6 +151,40 @@ public class GameManager : MonoBehaviour
                 UnityEngine.Debug.Log("Player counter not set");
             }
         }
+    }
+    // Method that initalises positions based on the grid
+    void SetUpPositions()
+    {
+
+    }
+
+    /* Method that simulates the player counter moving due to
+     snakes, ladders and bonus spaces */
+    void SetUpSnakesLaddersBonus()
+    {
+        joints = new Dictionary<int, int> 
+        {
+            // These represent ladders
+            {17, 36},
+            {30, 68},
+            {61, 84},
+            {72, 91},
+
+            // These represent snakes
+            {34, 6},
+            {42, 20},
+            {77, 45},
+            {95, 68},
+
+            // These represent +2 Boost Spaces
+            {20, 22},
+            {38, 40},
+            {56, 58},
+            {70, 72},
+
+            // This represents Super Snake
+            {69, 1},
+        };
     }
 
     private void Update()
