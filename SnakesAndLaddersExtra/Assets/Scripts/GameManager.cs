@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             // Player counter colour is set. Try catch for errors
             try
             {
-                temp.GetComponent<PieceScript>().SetColors((Player)i);
+                temp.GetComponent<Piece>().SetPlayerColors((Player)i);
             }
             catch (NullReferenceException)
             {

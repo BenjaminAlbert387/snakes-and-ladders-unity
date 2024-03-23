@@ -2,27 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceScript : MonoBehaviour
+public class Piece : MonoBehaviour
 {
     // SerializeField is used, so Unity can view and edit non public assets
+    
     [SerializeField]
 
     // List the colours used for the player counters
     List<Color> colors;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Create a function that sets the colour of the player counters
-    public void SetColors(Player player)
+    public void SetPlayerColors(Player player)
     {
         // Uses Unity's built in function to get the counter sprite
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
