@@ -108,8 +108,9 @@ public class GameManager : MonoBehaviour
         // Calls the method that sets up snakes, ladders etc
         SetUpSnakesLaddersBonus();
 
-        // Creates a new board using the BoardScript method
-        playingBoard = new BoardScript();
+        /* Creates a new board and set player positions.
+         Using the BoardScript method */
+        playingBoard = new BoardScript(joints);
 
         // Creates a new list of players
         players = new List<Player>();
@@ -155,7 +156,45 @@ public class GameManager : MonoBehaviour
     // Method that initalises positions based on the grid
     void SetUpPositions()
     {
+        // Create an array of 100 possible positions 
+        position = new UnityEngine.Vector3[100];
 
+        // The movement speed of the counters
+        float diff = 0.65f;
+
+        // Set the starting position to the beginning of the array
+        position[0] = startingPosition;
+
+        // Set the index to 1. This is so the nested for loop works
+        int index = 1;
+
+        /* Nested for loop that moves the counter either left to right
+         or right to left depending on the board. Repeats 5 times */
+         for (int i = 0; i < 5; i++)
+         {
+            // Counter movement, left to right 
+            for (int j = 0; j < 9; j++)
+            {
+                position[index] = new UnityEngine.Vector3(position[index - 1].x + diff, position[index - 1].y, position[index - 1].z);
+                index++;
+            }
+
+            position[index] = new UnityEngine.Vector3(position[index - 1].x + diff, position[index - 1].y, position[index - 1].z);
+                index++;
+
+            // Counter movement, right to left
+            for (int j = 0; j < 9; j++)
+            {
+                position[index] = new UnityEngine.Vector3(position[index - 1].x - diff, position[index - 1].y, position[index - 1].z);
+                index++;
+            }
+
+            // If a counter reaches the end, prevent it from moving
+            if (index == 100) 
+            return;
+            position[index] = new UnityEngine.Vector3(position[index - 1].x, position[index - 1].y, position[index - 1].z);
+                index++;
+         }
     }
 
     /* Method that simulates the player counter moving due to
