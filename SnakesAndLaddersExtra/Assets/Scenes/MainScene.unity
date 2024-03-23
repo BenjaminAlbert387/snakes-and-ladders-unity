@@ -204,7 +204,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.5471698, g: 0.4723211, b: 0.4723211, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -225,7 +225,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0
   far clip plane: 1000
   field of view: 34
   orthographic: 1
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 552217310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3030312, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,8 +308,7 @@ MonoBehaviour:
   canClick: 0
   DiceRoll: 0
   gamePiece: {fileID: 6946725768579062016, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
-  startingPosition: {x: -4, y: -3, z: 0}
-  playingBoard: {fileID: 0}
+  startingPosition: {x: -4, y: -3, z: -1}
   position: []
 --- !u!1 &619394800
 GameObject:
@@ -1707,7 +1706,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1762031162
+--- !u!1001 &1749689769
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1725,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 598825652504475241, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1758,10 +1757,6 @@ PrefabInstance:
     - target: {fileID: 6946725768579062016, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
       propertyPath: m_Name
       value: PlayerPiece
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946725768579062016, guid: 4caadfaef937d1d47846ad2cb47fea1d, type: 3}
-      propertyPath: m_TagString
-      value: Counter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2359,4 +2354,4 @@ SceneRoots:
   - {fileID: 1895688924}
   - {fileID: 4179999632742917289}
   - {fileID: 2057263124}
-  - {fileID: 1762031162}
+  - {fileID: 1749689769}
